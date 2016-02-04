@@ -172,6 +172,52 @@
     </script>
     
     <script>
+        $("#select_movie").select2({
+            ajax: {
+                dataType: 'json',
+                url: "https://api.themoviedb.org/3/search/movie",
+                data: function(params){
+                    return{
+                        query: params.term,
+                        api_key: "a1c65ce9d24b2d4ed117f413bb94a122"
+                    }
+                },
+                processResults: function (data, params) {
+                    // parse the results into the format expected by Select2
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data, except to indicate that infinite
+                    // scrolling can be used
+                    params.page = params.page || 1
+            
+                    return {
+                        results: data.results,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                },
+                cache: true
+            },
+
+            escapeMarkup: function (markup) { return markup }, // let our custom formatter work
+            minimumInputLength: 1,
+            templateResult: formatRepo, // omitted for brevity, see the source of this page
+            templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+        });
+
+        function formatRepo(data){
+            if(data.loading) return data.title
+            markup = "<p>"+data.title+"</p>"
+            return markup
+        }
+        
+        function formatRepoSelection(data){
+            $("#movie_id").val(data.id)
+            return data.title
+        }
+    </script>
+    
+    <script>
         $("#select_actors").select2({
             ajax: {
                 dataType: 'json',
@@ -206,14 +252,14 @@
         });
 
         function formatRepo(data){
-            if(data.loading) return data.title
+            if(data.loading) return data.name
             markup = "<p>"+data.name+"</p>"
             return markup
         }
         
         function formatRepoSelection(data){
-            $("#movie_id").val(data.id)
-            return data.title
+            //$("#movie_id").val(data.id)
+            return data.name
         }
     </script>
     
