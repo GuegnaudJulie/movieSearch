@@ -1,0 +1,40 @@
+<div class="container">
+
+	<header>
+		<h2>Détail du film</h2>
+	</header>
+
+	<div id="detail_film">
+		<p id="titre_film">
+			<span id="im_film">Image du film ?</span>
+			<span class="souligne">Titre </span>: titre ! <br/>
+			<span class="souligne">Année de création </span>: année <br/>
+			<span class="souligne">Catégorie </span>: catégorie <br/>
+		</p>
+
+		<p id="description_film">
+			<span class="souligne">Descrition du film </span>: Elementum sem parturient nulla quam placerat viverra
+				mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
+				donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
+				orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.
+		</p>
+
+		<div class="slideshow_acteur" onClick="slider()">
+			<ul>
+				<li><img src="http://images.google.fr/imgres?imgurl=http%3A%2F%2Fimg.tel.pmdstatic.net%2Ffit%2Fhttp.3A.2F.2Fphoto.2Eprogramme-tv.2Enet.2Fupload.2Fslideshow.2Farrow-vous-avez-deja-vu-les-acteurs-dans-d-autres-series-14-photos-8126.2Farrow-preview-7-138544.2Ejpg%2F1000x1333%2Fquality%2F65%2Fstephen-amell-alias-oliver-queen-dans-arrow.jpg&imgrefurl=http%3A%2F%2Fphoto.programme-tv.net%2Farrow-vous-avez-deja-vu-les-acteurs-dans-d-autres-series-14-photos-8126&h=1330&w=998&tbnid=eViJFsmP2g_izM%3A&docid=MlkoRjs7co5SqM&ei=BRWzVrzzHofwaJGfldAO&tbm=isch&iact=rc&uact=3&dur=1082&page=1&start=0&ndsp=13&ved=0ahUKEwj8iY2c4d3KAhUHOBoKHZFPBeoQrQMIOTAB" alt="" width="350" height="200" /></li>
+				<li><img src="http://images.google.fr/imgres?imgurl=http%3A%2F%2Fwww.quizz.biz%2Fuploads%2Fquizz%2F292011%2F9_pgui3.jpg&imgrefurl=http%3A%2F%2Fwww.quizz.biz%2Fquizz-292011.html&h=370&w=370&tbnid=fq7x_VtqWS2MFM%3A&docid=nJuH80aE6aO1TM&ei=BRWzVrzzHofwaJGfldAO&tbm=isch&iact=rc&uact=3&dur=263&page=2&start=13&ndsp=25&ved=0ahUKEwj8iY2c4d3KAhUHOBoKHZFPBeoQrQMIjAEwGw" alt="" width="350" height="200" /></li>
+				<li><img src="http://images.google.fr/imgres?imgurl=http%3A%2F%2Fcdn3-public.ladmedia.fr%2Fvar%2Fpublic%2Fstorage%2Fimages%2Fnews%2Fdaniel-radcliffe-jeune-acteur-le-plus-riche-d-angleterre-!-41077%2F340389-1-fre-FR%2FDaniel-Radcliffe-jeune-acteur-le-plus-riche-d-Angleterre_portrait_w674.jpg%253F&imgrefurl=http%3A%2F%2Fwww.public.fr%2FNews%2FDaniel-Radcliffe-jeune-acteur-le-plus-riche-d-Angleterre-!-41077&h=500&w=674&tbnid=sdp0rwMmTu-JvM%3A&docid=-1skMV9vLweuAM&ei=BRWzVrzzHofwaJGfldAO&tbm=isch&iact=rc&uact=3&dur=485&page=4&start=62&ndsp=24&ved=0ahUKEwj8iY2c4d3KAhUHOBoKHZFPBeoQrQMInwIwTA" alt="" width="350" height="200" /></li>
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	function slider(){
+		$(".slideshow_acteur ul").animate({marginLeft:-350},800,function(){
+            $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+         })
+	};
+</script>
