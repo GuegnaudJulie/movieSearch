@@ -7,16 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Moviesualization</title>
 
-<html>
-  
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-
     <!-- Generate visualization JS -->
     <script src="js/three.min.js"></script>
 
@@ -32,20 +22,20 @@
     
     <style>.select2-container{ width : 100% !important}</style>
 
-  <!-- Material Design Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  
-  
-  <link href="css/datepicker.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    <link href="css/datepicker.css" rel="stylesheet">
 
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
 
 </head>
 
@@ -290,8 +280,7 @@
 
         $("#btn_recherche_actors").click(function(event) {
             event.preventDefault()
-            $("#movie_id").val("")
-            $("input").val("")
+            console.log($('.leaderMultiSelctdropdown').val());
         });
         
         function getActorsJSON(id){
