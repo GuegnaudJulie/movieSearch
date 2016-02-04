@@ -19,19 +19,17 @@ $( document ).ready(function() {
 
 	$("#ajout_form").click(function() {
 	    $("#ajout").append('<div class="input-group">'+
-	        '<div class="input-group-btn">'+
-	          '<button type="button" class="btn btn-default dropdown-toggle type_membre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sélection <span class="caret"></span></button>'+
-	          '<ul class="dropdown-menu">'+
-	            '<li><a href="#">Acteur</a></li>'+
-	            '<li><a href="#">Réalisateur</a></li>'+
-	          '</ul>'+
-	        '</div>'+
+	        '<span class="input-group-addon type_membre" id="basic-addon1">Acteur</span>'+
 	        '<input type="text" class="form-control nom_membre" placeholder="Nom" aria-label="basic-addon1">'+
 	      '</div>');
 	  });
 
-	$("#btn_recherche").click(function() {
-		//var e = $( "#nav_recherche" ).find( ".active" );
+	$("#btn_recherche_film").click(function() {
+
+	});
+
+	$("#btn_recherche_acteur").click(function() {
+		
 	});
 
 	$("#btn_reset").click(function() {

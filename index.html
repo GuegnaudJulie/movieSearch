@@ -46,8 +46,8 @@
           <div class="col-md-4">
 
             <ul class="nav nav-tabs" id="nav_recherche" role="tablist">
-              <li role="presentation" id="tab_titre" ><a href="#" aria-controls="titre" role="tab" data-toggle="tab">Recherche par titre</a></li>
-              <li role="presentation" id="tab_detail"><a href="#" aria-controls="detail" role="tab" data-toggle="tab">Recherche par détail</a></li>
+              <li role="presentation" id="tab_titre" ><a href="#" aria-controls="titre" role="tab" data-toggle="tab">Recherche par film</a></li>
+              <li role="presentation" id="tab_detail"><a href="#" aria-controls="detail" role="tab" data-toggle="tab">Recherche par acteur</a></li>
             </ul>
 
             <div class="col-md-12" id="affiche_form">
@@ -56,29 +56,28 @@
                 <div role="tabpanel" class="tab-pane" id="titre">
                   <!-- Recherche par titre -->
                   <div class="col-md-12">
-                    <p class="form-control-static titre_">Recherche par titre</p>
+                    <p class="form-control-static titre_">Recherche par film</p>
 
                     <select name="select" class="form-control" id="select_movies" style="width:100%;"></select>
 
                     <div class="input-group">
                       <input type="hidden" class="form-control" id="id_titre" aria-describedby="basic-addon1">
                     </div>
+
+                    <div class="col-md-12" style="margin-top:2em; text-align:center;">
+                      <button class="btn btn-default" id="btn_recherche_film">Rechercher</button>
+                    </div>
+
                   </div>
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="detail">
                   <!-- Recherche par acteur -->
                   <div class="col-md-12">
-                    <p class="form-control-static titre_">Recherche par détail</p>
+                    <p class="form-control-static titre_">Recherche par acteur</p>
 
                     <div class="input-group">
-                      <div class="input-group-btn">
-                        <button type="button" class="btn btn-default dropdown-toggle type_membre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sélection <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Acteur</a></li>
-                          <li><a href="#">Réalisateur</a></li>
-                        </ul>
-                      </div>
+                      <span class="input-group-addon type_membre" id="basic-addon1">Acteur</span>
                       <input type="text" class="form-control nom_membre" placeholder="Nom" aria-label="basic-addon1">
                     </div>
 
@@ -88,7 +87,7 @@
                     <div class="col-md-12" style="text-align: right;">
                       <form class="form-inline">
                         <div class="form-group">
-                          <label for="date_debut">Date : de </label>
+                          <label for="date_debut">Année de </label>
                           <input type="text" class="form-control" id="date_debut" placeholder="Début">
                         </div><br/>
                         <div class="form-group">
@@ -97,14 +96,15 @@
                         </div>
                       </form>
                     </div>
+
+                    <div class="col-md-12" style="margin-top:2em; text-align:center;">
+                      <button class="btn btn-default" id="btn_recherche_acteur">Rechercher</button>
+                      <button class="btn btn-default" id="btn_reset">Reset</button>
+                    </div>
+
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col-md-12" style="margin-top:2em; text-align:center;">
-              <button class="btn btn-default" id="btn_recherche">Rechercher</button>
-              <button class="btn btn-default" id="btn_reset">Reset</button>
             </div>
 
           <div class="col-md-8">
