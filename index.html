@@ -1,119 +1,257 @@
-<html>
-  
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moviesualization</title>
+
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" />
-  </head>
+
+  <!-- Material Design Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   
-  <body>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><span>SearchMovies</span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active">
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About us</a>
-            </li>
-            <li>
-              <a href="#">Contacts</a>
-            </li>
-          </ul>
-        </div>
+  
+  <link href="css/datepicker.css" rel="stylesheet">
+
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar z-depth-2 info-color">
+    <div class="container ">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand waves-effect waves-light" href="#">Moviesualization</a>
       </div>
     </div>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
+  </nav>
 
-            <ul class="nav nav-tabs" id="nav_recherche" role="tablist">
-              <li role="presentation" id="tab_titre" ><a href="#" aria-controls="titre" role="tab" data-toggle="tab">Recherche par titre</a></li>
-              <li role="presentation" id="tab_detail"><a href="#" aria-controls="detail" role="tab" data-toggle="tab">Recherche par détail</a></li>
-            </ul>
 
-            <div class="col-md-12" id="affiche_form">
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane" id="titre">
-                  <!-- Recherche par titre -->
-                  <div class="col-md-12">
-                    <p class="form-control-static titre_">Recherche par titre</p>
+  <!-- Page Content -->
+  <div class="container-fluid">
 
-                    <select name="select" class="form-control" id="select_movies" style="width:100%;"></select>
+    <div class="row">
 
-                    <div class="input-group">
-                      <input type="hidden" class="form-control" id="id_titre" aria-describedby="basic-addon1">
+      <!-- Blog Sidebar Widgets Column -->
+      <div class="col-md-3">
+        <div class="sidebar">
+          <!-- Subscription widget -->
+          <div class="card-panel">
+            <div class="row">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#movies" aria-controls="movies" role="tab" data-toggle="tab">Movies</a></li>
+                    <li role="presentation"><a href="#actors" aria-controls="actors" role="tab" data-toggle="tab">Actors</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="movies">
+                        <form class="col-md-12">
+                            <h5>Search a movie</h5>
+                            <div class="input-field">
+                                <select name="select" class="form-control" id="select_movie" aria-placeholder="Enter a title"></select>
+                            </div>
+                            <div class="input-field">
+                                <input id="datepicker_movie" type="text" placeholder="Release date">
+                            </div>
+                            <div class="input-field">
+                                <input type="hidden" class="form-control" id="movie_id">
+                            </div>
+                            <div class="input-field">
+                                <button type="button" class="btn btn-default form-control" style="margin:10px 0px" id="btn_recherche_movie">Search !</button>
+                                <button type="button" class="btn btn-default form-control" style="margin:10px 0px" id="btn_reset_movie">Reset</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-md-12" style="margin-top:2em; text-align:center;">
-                        <button class="btn btn-default" id="btn_recherche_movie">Rechercher</button>
-                        <button class="btn btn-default" id="btn_reset">Reset</button>
+                    <div role="tabpanel" class="tab-pane fade" id="actors">
+                        
                     </div>
-                  </div>
                 </div>
-
-                <div role="tabpanel" class="tab-pane" id="detail">
-                  <!-- Recherche par acteur -->
-                  <div class="col-md-12">
-                    <p class="form-control-static titre_">Recherche par détail</p>
-
-                    <div class="input-group">
-                      <div class="input-group-btn">
-                        <button type="button" class="btn btn-default dropdown-toggle type_membre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sélection <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Acteur</a></li>
-                          <li><a href="#">Réalisateur</a></li>
-                        </ul>
-                      </div>
-                      <input type="text" class="form-control nom_membre" placeholder="Nom" aria-label="basic-addon1">
-                    </div>
-
-                      <div id="ajout"></div>
-                      <p style="text-align:right;" id="ajout_form"><span class="glyphicon glyphicon-plus" style="font-size:3em;"></span></p>
-
-                    <div class="col-md-12" style="text-align: right;">
-                      <form class="form-inline">
-                        <div class="form-group">
-                          <label for="date_debut">Date : de </label>
-                          <input type="text" class="form-control" id="date_debut" placeholder="Début">
-                        </div><br/>
-                        <div class="form-group">
-                          <label for="date_fin"> à </label>
-                          <input type="email" class="form-control" id="date_fin" placeholder="Fin">
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            
-
-          <div class="col-md-8">
-            <div class="col-md-12" id="contenu"></div>
           </div>
+          <!--/.Subscription widget -->
+      </div>
+
+      <div class="col-md-9">
+
+        
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <div class="container-fluid">
+
+    <hr>
+    
+  </div>
+  <!-- /.container -->
+
+
+
+  <!-- Footer -->
+  <footer class="page-footer info-color darken-1" if="footer">
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        <div class="col-md-3"> 
+            © Hackaton 2016
+        </div>
+        <div class="col-md-offset-6 col-md-3">
+            <a href="http://www.istic.univ-rennes1.fr/fr/Intranet/5ans/">Les 5 ans de l'ISTIC de Rennes 1</a>
         </div>
       </div>
     </div>
-  </body>
+  </footer>
+
+
+
+
+  <!-- SCRIPTS -->
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+
+  <!-- Material Design Bootstrap -->
+  <script type="text/javascript" src="js/mdb.js"></script>
+  
+  <script>
+        $("#datepicker_movie").datepicker( {
+            format: " yyyy",
+            viewMode: "years", 
+            minViewMode: "years"
+        })
+        
+        $("#datepicker_movie").change(function(event){
+            if($("#datepicker_movie").val() != "" && $("#datepicker_movie").val() != undefined && $("#datepicker_movie").val() != null){
+                $("#label_datepicker_movie").text("")
+            }
+        })
+    </script>
+    
+    <script>
+        $("#select_movie").select2({
+
+		ajax: {
+			dataType: 'json',
+	        url: "https://api.themoviedb.org/3/search/movie",
+	        data: function(params){
+	        	return{
+	        		query: params.term,
+	        		api_key: "a1c65ce9d24b2d4ed117f413bb94a122"
+	        	}
+	        },
+            
+			processResults: function (data, params) {
+				// parse the results into the format expected by Select2
+				// since we are using custom formatting functions we do not need to
+				// alter the remote JSON data, except to indicate that infinite
+				// scrolling can be used
+				params.page = params.page || 1
+		
+				return {
+					results: data.results,
+					pagination: {
+						more: (params.page * 30) < data.total_count
+					}
+				};
+			},
+			cache: true
+		},
+
+		escapeMarkup: function (markup) { return markup }, // let our custom formatter work
+		minimumInputLength: 1,
+		templateResult: formatRepo, // omitted for brevity, see the source of this page
+		templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
+	});
+
+        function formatRepo(data){
+            if(data.loading) return data.title
+            markup = "<p>"+data.title+"</p>"
+            return markup
+        }
+
+        function formatRepoSelection(data){
+            $("#movie_id").val(data.id)
+            return data.title
+        }
+    </script>
+    
+    <script>
+        var API_KEY = "a1c65ce9d24b2d4ed117f413bb94a122"
+        var nb_people_limit = 0
+        
+        $("#btn_recherche_movie").click(function(event) {
+            event.preventDefault() 
+            getMovieJSON($("#movie_id").val())
+        });
+
+        $("#btn_recherche_movie").click(function(event) {
+            event.preventDefault()
+            $("#movie_id").val("")
+            $("input").val("")
+        });
+        
+        function getMovieJSON(id){
+        var BASE_URL = "https://api.themoviedb.org/3/"
+        var final_json = {}
+        final_json['type'] = "movie"
+        $.ajax({
+            dataType: 'json',
+            url: BASE_URL+"movie/"+id,
+            data: {
+                api_key: API_KEY,
+                append_to_response: "credits,images"
+            },
+            success: function(data) {
+                final_json['title'] = data['title']
+                final_json['image'] = "http://image.tmdb.org/t/p/w300"+data['poster_path']
+                final_json['vote_average'] = data['vote_average']
+                final_json['release_date'] = data['release_date']
+                final_json['overview'] = data['overview']
+                var tab = (nb_people_limit > 0 ? data['credits']['cast'].slice(0, nb_people_limit) : data['credits']['cast'])
+                var actors = []
+                $.each(tab, function(k, v) {
+                    var actor = {}
+                    actor['id'] = v['id']
+                    actor['character'] = v['character']
+                    actor['name'] = v['name']
+                    if(v['profile_path'] != null){
+                        actor['image'] = "http://image.tmdb.org/t/p/w300"+v['profile_path']
+                    }
+                    actors.push(actor)
+                })
+                final_json['actors'] = actors
+                console.log(JSON.stringify(final_json))
+            }
+        })
+    }
+        
+        
+   </script>
+
+
+
+</body>
 
 </html>
