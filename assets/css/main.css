@@ -21,7 +21,12 @@
 	margin: 0 0 0 0.7em;
 }
 
-select#liste_type_membre, input.nom_membre, input#nom_titre, input.date_debut, input.date_fin {
+.result_movies{
+	font-size: 0.6em;
+	height: 30px;
+}
+
+select#liste_type_membre, input.nom_membre, input#nom_titre, input.date_debut, input.date_fin, #select_movies{
 	height: 30px;
 	font-size: 1em;
 	-moz-border-radius: 4px;
@@ -30,15 +35,26 @@ select#liste_type_membre, input.nom_membre, input#nom_titre, input.date_debut, i
 	margin-left: 0.5em;
 }
 
+#select_movies{
+	width: 150px;
+}
+
 select#liste_type_membre{
 	width: 70px;
 	margin: 0.5em 0 0.5em 0;
 }
 
 input.input_recherche, input#nom_titre {
-	width: 150px;
 	padding: 0 0.2em 0 0.2em;
 	margin: 0.5em 0 0.5em 0;
+}
+
+input.input_recherche{
+	width: 150px;
+}
+
+input#nom_titre {
+	width: 150px;
 }
 
 input.date_debut, input.date_fin {
