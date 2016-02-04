@@ -1,3 +1,6 @@
+var API_KEY = "a1c65ce9d24b2d4ed117f413bb94a122"
+var nb_people_limit = 0
+
 $( document ).ready(function() {
 	$("#tab_titre").addClass("active");
 	$("#titre").addClass("active");
@@ -30,8 +33,9 @@ $( document ).ready(function() {
 	      '</div>');
 	  });
 
-	$("#btn_recherche").click(function() {
-		//var e = $( "#nav_recherche" ).find( ".active" );
+	$("#btn_recherche_movie").click(function() {
+		var id = $("#id_titre").val()
+        getMovieJSON(id)
 	});
 
 	$("#btn_reset").click(function() {
@@ -92,5 +96,40 @@ $( document ).ready(function() {
 		$("#id_titre").val(data.id);
 		return data.title;
 	};
+    
+    function getMovieJSON(id){
+        var BASE_URL = "https://api.themoviedb.org/3/"
+        var final_json = {}
+        final_json['type'] = "movie"
+        $.ajax({
+            dataType: 'json',
+            url: BASE_URL+"movie/"+id,
+            data: {
+                api_key: API_KEY,
+                append_to_response: "credits,images"
+            },
+            success: function(data) {
+                final_json['title'] = data['title']
+                final_json['image'] = "http://image.tmdb.org/t/p/w300"+data['poster_path']
+                final_json['vote_average'] = data['vote_average']
+                final_json['release_date'] = data['release_date']
+                final_json['overview'] = data['overview']
+                var tab = (nb_people_limit > 0 ? data['credits']['cast'].slice(0, nb_people_limit) : data['credits']['cast'])
+                var actors = []
+                $.each(tab, function(k, v) {
+                    var actor = {}
+                    actor['id'] = v['id']
+                    actor['character'] = v['character']
+                    actor['name'] = v['name']
+                    if(v['profile_path'] != null){
+                        actor['image'] = "http://image.tmdb.org/t/p/w300"+v['profile_path']
+                    }
+                    actors.push(actor)
+                })
+                final_json['actors'] = actors
+                console.log(JSON.stringify(final_json))
+            }
+        })
+    }
 
 });
