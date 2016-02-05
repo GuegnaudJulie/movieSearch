@@ -29,76 +29,111 @@
 		<nav class="navbar z-depth-2 info-color">
 			<div class="container ">
 				<div class="navbar-header">
-					<a class="navbar-brand waves-effect waves-light" href="#">Moviesualization</a>
+					<a class="navbar-brand" href="#">
+					<img src="img/mdb.png" class="img img-responsive" style="height:32px; width: 32px;"/>
+					</a>
+					<a class="navbar-brand waves-effect waves-light" href="#" style="font-size: 2em;"><b>Moviesualization</b></a>
 				</div>
 			</div>
 		</nav>
 		<!-- Page Content -->
 		<div class="container-fluid">
-			<div class="row">
-				<!-- Graph content HERE ! -->
-				<div class="col-md-12">
-				</div>
-				<div class="col-md-6">
-					<div class="sidebar">
-						<div class="card-panel">
-							<div class="row">
-								<ul class="nav nav-tabs" role="tablist">
-									<li role="presentation" class="active"><a href="#movies" aria-controls="movies" role="tab" data-toggle="tab">Movies</a></li>
-									<li role="presentation"><a href="#actors" aria-controls="actors" role="tab" data-toggle="tab">People</a></li>
-								</ul>
-								<div class="tab-content">
-									<div role="tabpanel" class="tab-pane fade in active" id="movies">
-										<form class="col-md-12">
-											<h5>Search a movie by title</h5>
-											<div class="input-field">
-												<select name="select" class="form-control" id="select_movie" placeholder="Enter a title"></select>
-											</div>
-											<div class="input-field">
-												<input id="datepicker_movie" type="text" placeholder="Release date">
-											</div>
-											<div class="input-field">
-												<button type="button" class="btn waves-effect waves-light blue form-control" style="color:white; margin:10px 0px" id="btn_recherche_movie">Search !</button>
-												<button type="button" class="btn waves-effect waves-light blue form-control" style="color:white; margin:10px 0px" id="btn_reset_movie">Reset</button>
-											</div>
-										</form>
+		<div class="row">
+			<!-- Graph content HERE ! -->
+			<div class="col-md-12">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="sidebar card-panel">
+					<div class="row">
+						<ul class="nav nav-tabs nav-justified" role="tablist">
+							<li role="presentation" class="active"><a href="#movies" aria-controls="movies" role="tab" data-toggle="tab">Movies</a></li>
+							<li role="presentation"><a href="#actors" aria-controls="actors" role="tab" data-toggle="tab">People</a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane fade in active" id="movies">
+								<form class="col-md-12">
+									<h5>Search a movie by title</h5>
+									<div class="input-field">
+										<select name="select" class="form-control" id="select_movie" placeholder="Enter a title"></select>
 									</div>
-									<div role="tabpanel" class="tab-pane fade" id="actors">
-										<form class="col-md-12">
-											<h5>Search a movie by people</h5>
-											<div class="input-field">
-												<select name="select" class="form-control" id="select_actors" multiple="multiple" placeholder="Enter a name"></select>
-											</div>
-											<div class="input-field">
-												<button type="button" class="btn waves-effect waves-light blue form-control" style="color:white; margin:10px 0px" id="btn_recherche_actors">Search !</button>
-												<button type="button" class="btn waves-effect waves-light blue form-control" style="color:white; margin:10px 0px" id="btn_reset_actors">Reset</button>
-											</div>
-										</form>
+									<div class="input-field">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn waves-effect waves-light blue form-control" style="color:white; margin:10px 0px" id="btn_recherche_movie">Search !</button>
+										    </div>
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn waves-effect waves-light red form-control" style="color:white; margin:10px 0px" id="btn_reset_movie">Reset</button>
+									       </div>
+                                        </div>
+								    </div>
+								</form>
+							</div>
+							<div role="tabpanel" class="tab-pane fade" id="actors">
+								<form class="col-md-12">
+									<h5>Search a movie by people</h5>
+									<div class="input-field">
+										<select name="select" class="form-control" id="select_actors" multiple="multiple" placeholder="Enter a name"></select>
 									</div>
-								</div>
+                                    <div class="input-field">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input id="datepicker_movie_start" class="datepicker" type="text" placeholder="Release date start">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input id="datepicker_movie_end" class="datepicker" type="text" placeholder="Release date end">
+                                            </div>
+                                        </div>
+									</div>
+									<div class="input-field">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn waves-effect waves-light blue form-control" style="color:white; margin:10px 0px" id="btn_recherche_actors">Search !</button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button type="button" class="btn waves-effect waves-light red form-control" style="color:white; margin:10px 0px" id="btn_reset_actors">Reset</button>
+                                            </div>
+                                        </div>
+                                    </div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
-                <!-- DESCRIPTION POINT HERE -->
-                <div class="col-md-6">
-                </div>
+			</div>
+			<!-- DESCRIPTION POINT HERE -->
+			<div class="col-md-6">
+				<div class="sidebar card-panel">
+					<div class="row">
+						<div class="col-md-12">
+                            <div class="row">
+                                <div class="hidden-xs col-md-offset-1 col-md-2"><img src="img/mdb_nb.png" class="img img-responsive" style="padding-top:10px"/></div>
+                                <div class="col-xs-12 col-md-9"><h1>About the app</h1></div>
+                            </div>
+							
+							<p class="text-justify">Moviesualization a été créé par une étroite collaboration entre Julie Guégnaud, Julien Moulin et Yoann Letaillanter, tous les trois issus du cursus MIAGE.</p>
+							<br/>
+                            <p class="text-justify">Pour nous aider à perfectionner notre site, faites un don :)</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- /.container -->
 		<div class="container-fluid">
-			<hr>
+			<hr>           
 		</div>
 		<!-- /.container -->
 		<!-- Footer -->
-		<footer class="page-footer info-color darken-1" if="footer">
+		<footer class="page-footer info-color darken-1" id="footer" style="bottom: 0;width: 100%;">
 			<div class="footer-copyright">
 				<div class="container-fluid">
 					<div class="col-md-3"> 
 						© Hackaton 2016
 					</div>
 					<div class="col-md-offset-6 col-md-3">
-						<a href="http://www.istic.univ-rennes1.fr/fr/Intranet/5ans/">Les 5 ans de l'ISTIC de Rennes 1</a>
+						<a><img src="img/don.png" class="img img-responsive"/></a>
 					</div>
 				</div>
 			</div>
@@ -113,17 +148,21 @@
 		<!-- Material Design Bootstrap -->
 		<script type="text/javascript" src="js/mdb.js"></script>
 		<script>
-			$("#datepicker_movie").datepicker( {
+			$(".datepicker").datepicker( {
 			    format: " yyyy",
 			    viewMode: "years", 
 			    minViewMode: "years"
 			})
-			
-			$("#datepicker_movie").change(function(event){
-			    if($("#datepicker_movie").val() != "" && $("#datepicker_movie").val() != undefined && $("#datepicker_movie").val() != null){
-			        $("#label_datepicker_movie").text("")
-			    }
-			})
+			$( document ).ready(function() {
+                var heights = $(".card-panel").map(function() {
+                    return $(this).height();
+                }).get(),
+
+                maxHeight = Math.max.apply(null, heights);
+
+                $(".card-panel").height(maxHeight);
+            });
+            
 		</script>
 		<script>
 			$("#select_movie").select2({
@@ -161,12 +200,12 @@
 			
 			function formatRepo(data){
 			    if(data.loading) return data.title
-			    markup = "<p>"+data.title+"</p>"
+			    markup = "<p>"+data.title+" - "+new Date(data.release_date).getFullYear()+"</p>"
 			    return markup
 			}
 			
 			function formatRepoSelection(data){
-			    return data.title
+			    return data.title+" - "+new Date(data.release_date).getFullYear()
 			}
 		</script>
 		<script>
@@ -218,9 +257,10 @@
 			var nb_result_limit = 10
 			
 			$("#btn_recherche_movie").click(function(event) {
-			    event.preventDefault() 
-			    console.log($("#select_movie").val())
-			    //getMovieJSON($("#select_movie").val())
+			    event.preventDefault()
+                if($("#select_movie").val() != null && $("#select_movie").val() != ""){
+                   getMovieJSON($("#select_movie").val()) 
+                }
 			});
 			
 			$("#btn_reset_movie").click(function(event) {
@@ -240,7 +280,7 @@
 			        append_to_response: "credits,images"
 			    },
 			    success: function(data) {
-                    final_json['id'] = data['id']
+			                 final_json['id'] = data['id']
 			        final_json['title'] = data['title']
 			        final_json['image'] = "http://image.tmdb.org/t/p/w300"+data['poster_path']
 			        final_json['vote_average'] = data['vote_average']
@@ -250,7 +290,7 @@
 			        var actors = []
 			        $.each(tab, function(k, v) {
 			            var actor = {}
-                        actor['type'] = "actor"
+			                     actor['type'] = "actor"
 			            actor['id'] = v['id']
 			            actor['character'] = v['character']
 			            actor['name'] = v['name']
@@ -272,15 +312,21 @@
 			
 			$("#btn_recherche_actors").click(function(event) {
 			    event.preventDefault()
-                getActorsJSON($('#select_actors').val().join())
+                if($("#select_actors").val() != null && $("#select_movie").val() != ""){
+                    var date_start = (($("#datepicker_movie_start").val() != null && $("#datepicker_movie_start").val() != "")? $("#datepicker_movie_start").val() : 1900)
+                    var date_end = (($("#datepicker_movie_end").val() != null && $("#datepicker_movie_end").val() != "")? $("#datepicker_movie_end").val() : 3000)
+                    getActorsJSON($('#select_actors').val().join(), Number(date_start)+"-01-01", Number(date_end)+"-12-31")
+                }
 			});
 			
 			$("#btn_reset_actors").click(function(event) {
 			    event.preventDefault()
 			    $("#select_actors").select2("val", "")
+                $("#datepicker_movie_start").val("")
+                $("#datepicker_movie_end").val("")
 			});
 			
-			function getActorsJSON(id){
+			function getActorsJSON(id, date_start, date_end){
 			var BASE_URL = "https://api.themoviedb.org/3/";
 			var final_json = {}
 			final_json['type'] = "actor"
@@ -289,27 +335,29 @@
 			    url: BASE_URL+"discover/movie",
 			    data: {
 			        api_key: API_KEY,
-			        with_cast: id
+			        with_cast: id,
+                    'release_date.gte' : date_start,
+                    'release_date.lte' : date_end,
 			    },
 			    success: function(data) {
-                    var final_json = {}
-                    var tab = (nb_result_limit > 0 ? data['results'].slice(0, nb_result_limit) : data['results'])
-                    var movies = []
-                    $.each(tab, function(k, v) {
+			                 var final_json = {}
+			                 var tab = (nb_result_limit > 0 ? data['results'].slice(0, nb_result_limit) : data['results'])
+			                 var movies = []
+			                 $.each(tab, function(k, v) {
 			            var movie = {}
-                        movie['type'] = "movie"
+			                     movie['type'] = "movie"
 			            movie['id'] = v['id']
-                        movie['title'] = v['title']
-                        movie['vote_average'] = v['vote_average']
-                        movie['release_date'] = v['release_date']
-                        movie['overview'] = v['overview']
-                        if(v['profile_path'] != null){
+			                     movie['title'] = v['title']
+			                     movie['vote_average'] = v['vote_average']
+			                     movie['release_date'] = v['release_date']
+			                     movie['overview'] = v['overview']
+			                     if(v['profile_path'] != null){
 			                movie['image'] = "http://image.tmdb.org/t/p/w300"+v['poster_path']
 			            }
 			            movies.push(movie)
 			        })
 			        final_json['movies'] = movies
-                    console.log(final_json)
+			                 console.log(final_json)
 			    }
 			})
 			}
