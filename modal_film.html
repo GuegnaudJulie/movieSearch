@@ -13,24 +13,19 @@
       </div>
       <div class="modal-body">
           <p class="lead">
-            <strong>Titre :</strong> <span id="id_titre">titre !</span> <br/>
-            <strong>Année de création :</strong> <span id="id_annee">année</span> <br/>
-            <strong>Catégorie :</strong> <span id="id_categorie">catégorie</span> <br/>
+            <strong>Titre :</strong> <span id="id_titre"></span> <br/>
+            <strong>Année de création :</strong> <span id="id_annee"></span> <br/>
+            <strong>Catégorie :</strong> <span id="id_categorie"></span> <br/>
           </p>
           <img src="" class="img img-responsive"/>
 
             <p class="lead">
-              <strong>Descrition du film :</strong> <span id="id_description">Elementum sem parturient nulla quam placerat viverra
-              mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-              donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-              orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor. </span>
+              <strong>Descrition du film :</strong> <span id="id_description"></span>
             </p>
 
             <div id="slideshow_acteur">
               <ul id="list_acteur">
-                <li><img src="http://images.google.fr/imgres?imgurl=http%3A%2F%2Fimg.tel.pmdstatic.net%2Ffit%2Fhttp.3A.2F.2Fphoto.2Eprogramme-tv.2Enet.2Fupload.2Fslideshow.2Farrow-vous-avez-deja-vu-les-acteurs-dans-d-autres-series-14-photos-8126.2Farrow-preview-7-138544.2Ejpg%2F1000x1333%2Fquality%2F65%2Fstephen-amell-alias-oliver-queen-dans-arrow.jpg&imgrefurl=http%3A%2F%2Fphoto.programme-tv.net%2Farrow-vous-avez-deja-vu-les-acteurs-dans-d-autres-series-14-photos-8126&h=1330&w=998&tbnid=eViJFsmP2g_izM%3A&docid=MlkoRjs7co5SqM&ei=BRWzVrzzHofwaJGfldAO&tbm=isch&iact=rc&uact=3&dur=1082&page=1&start=0&ndsp=13&ved=0ahUKEwj8iY2c4d3KAhUHOBoKHZFPBeoQrQMIOTAB" alt="" width="350" height="200" /></li>
-                <li><img src="http://images.google.fr/imgres?imgurl=http%3A%2F%2Fwww.quizz.biz%2Fuploads%2Fquizz%2F292011%2F9_pgui3.jpg&imgrefurl=http%3A%2F%2Fwww.quizz.biz%2Fquizz-292011.html&h=370&w=370&tbnid=fq7x_VtqWS2MFM%3A&docid=nJuH80aE6aO1TM&ei=BRWzVrzzHofwaJGfldAO&tbm=isch&iact=rc&uact=3&dur=263&page=2&start=13&ndsp=25&ved=0ahUKEwj8iY2c4d3KAhUHOBoKHZFPBeoQrQMIjAEwGw" alt="" width="350" height="200" /></li>
-                <li><img src="http://images.google.fr/imgres?imgurl=http%3A%2F%2Fcdn3-public.ladmedia.fr%2Fvar%2Fpublic%2Fstorage%2Fimages%2Fnews%2Fdaniel-radcliffe-jeune-acteur-le-plus-riche-d-angleterre-!-41077%2F340389-1-fre-FR%2FDaniel-Radcliffe-jeune-acteur-le-plus-riche-d-Angleterre_portrait_w674.jpg%253F&imgrefurl=http%3A%2F%2Fwww.public.fr%2FNews%2FDaniel-Radcliffe-jeune-acteur-le-plus-riche-d-Angleterre-!-41077&h=500&w=674&tbnid=sdp0rwMmTu-JvM%3A&docid=-1skMV9vLweuAM&ei=BRWzVrzzHofwaJGfldAO&tbm=isch&iact=rc&uact=3&dur=485&page=4&start=62&ndsp=24&ved=0ahUKEwj8iY2c4d3KAhUHOBoKHZFPBeoQrQMInwIwTA" alt="" width="350" height="200" /></li>
+                
               </ul>
             </div>
       </div>
@@ -43,21 +38,24 @@
 </div>
 
 <script type="text/javascript">
-  $("#id_titre").append();
-  $("#id_annee").append();
-  $("#id_categorie").append();
-  $("#id_description").append();
+  jQuery(document).ready(function()
+  {
+    $("#id_titre").append("Star wars");
+    $("#id_annee").append("2015");
+    $("#id_categorie").append("science fiction");
+    $("#id_description").append("Descrition");
 
-  var img = "";
-  for (var i = 0; i >= 0; i++) {
-      img += "<li><img src='" + 
-              "' alt='' width='350' height='200'/></li>"
-  };
+    var img = "";
+    var src = "/image"
+    for (var i = 0; i >= 0; i++) {
+        img += "<li><img src='" + src + "' alt='' width='350' height='200'/></li>";
+    };
 
-  $("#list_acteur").append(img);
+    $("#list_acteur").append(img);
 
-  $(".slideshow_acteur ul").animate({marginLeft:-350},800,function(){
-            $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
-         })
-  };
+    $(".slideshow_acteur ul").animate({marginLeft:-350},800,function(){
+        $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+     })
+
+  });
 </script>
